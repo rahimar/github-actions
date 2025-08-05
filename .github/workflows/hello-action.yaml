@@ -37,7 +37,7 @@ jobs:
           echo "Archetecture: $RUNNER_ARCH"
 
       - name: Run a one-line script
-        run: echo "Hello wolrd $(inputs.username)"
+        run: echo "Hello wolrd $(whoami)" ${{ inputs.username }}
 
       - name: Show Current Date Information
         run: date

@@ -14,6 +14,14 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      
+      - name: Install dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+
+          echo "jq: $(jq --version)" 
+          echo "curl: $(curl --version)" 
+
       - name: Show System Information
         run: |
           uname -a

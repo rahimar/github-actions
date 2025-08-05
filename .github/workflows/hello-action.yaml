@@ -15,7 +15,11 @@ jobs:
      steps:
      
       - name: Show System Information
-        run: uname -a
+        run: |
+          uname -a
+          echo "Current user: $(whoami)"
+          echo "OS: $RUNNER_OS"
+          echo "Archetecture: $RUNNER_ARCH"
 
       - name: Run a one-line script
         run: echo "Hello wolrd"

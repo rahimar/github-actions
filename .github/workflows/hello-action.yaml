@@ -2,13 +2,15 @@
 name: Hello World
 
 on:
+   workflow_dispatch:
+   
    push:
      branches:
         - main
 
 
 jobs:
-  build:
+  hello-world:
      runs-on: ubuntu-latest
      steps:
        - name: Run a one-line script

@@ -3,6 +3,13 @@ name: Hello World
 
 on:
    workflow_dispatch:
+     inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
+
    
    push:
      branches:
@@ -30,7 +37,7 @@ jobs:
           echo "Archetecture: $RUNNER_ARCH"
 
       - name: Run a one-line script
-        run: echo "Hello wolrd"
+        run: echo "Hello wolrd $(inputs.username)"
 
       - name: Show Current Date Information
         run: date
@@ -45,4 +52,3 @@ jobs:
 
       - name: Display files in the repository
         run: ls -la
-        
